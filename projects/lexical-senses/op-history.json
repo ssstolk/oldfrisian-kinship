@@ -1,0 +1,102 @@
+[
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "skos",
+          "uri": "http://www.w3.org/2004/02/skos/core#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "ontolex",
+          "uri": "http://www.w3.org/ns/lemon/ontolex#"
+        }
+      ],
+      "baseUri": "http://urn:isbn:9783825355555#",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "id",
+          "expression": "replace(value,\" \",\"+\")",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://www.w3.org/ns/lemon/ontolex#isSenseOf",
+              "curie": "ontolex:isSenseOf",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "entry-id",
+                "expression": "replace(value,\" \",\"+\")",
+                "isRowNumberCell": false,
+                "links": [],
+                "rdfTypes": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+              "curie": "skos:prefLabel",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "word",
+                "expression": "value",
+                "lang": "ofs",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf",
+              "curie": "ontolex:isLexicalizedSenseOf",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "concept-id",
+                "expression": "if(toString(value).startsWith(\"http\"), value, \"https://w3id.org/evoke/id/concept/\" + md5(\"urn:isbn:9783825355555\") + \".\" + if(isNumeric(value),round(value),value))",
+                "isRowNumberCell": false,
+                "links": [],
+                "rdfTypes": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2004/02/skos/core#note",
+              "curie": "skos:note",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "notes",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+              "curie": "rdfs:isDefinedBy",
+              "target": {
+                "nodeType": "resource",
+                "value": "https://w3id.org/evoke/set/ofris-kinship",
+                "links": [],
+                "rdfTypes": []
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://www.w3.org/ns/lemon/ontolex#LexicalSense",
+              "curie": "ontolex:LexicalSense"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  }
+]

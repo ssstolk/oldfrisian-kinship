@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Stolk"
+  given-names: "Sander"
+  orcid: "https://orcid.org/0000-0003-2254-6613"
+title: "oldfrisian-kinship"
+url: "https://github.com/ssstolk/oldfrisian-kinship"
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Poel"
+    name-particle: "van de"
+    given-names: "Rita"
+    orcid: "https://orcid.org/0000-0001-5960-7913"
+  - family-names: "Stolk"
+    given-names: "Sander"
+    orcid: "https://orcid.org/0000-0003-2254-6613"
+  journal: "Exploring Early Medieval English Eloquence: A Digital Humanities Approach with A Thesaurus of Old English and Evoke"
+  start: 457 # First page number
+  end: 492 # Last page number
+  title: "A Case of Kinship: Onomasiological Explorations of Kinship in Old Frisian and Old English"
+  year: 2021
+  url: "https://doi.org/10.1163/18756719-12340239"
+  doi: 10.1163/18756719-12340239
